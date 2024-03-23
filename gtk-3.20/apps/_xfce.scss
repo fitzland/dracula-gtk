@@ -1,4 +1,5 @@
 .xfce4-panel {
+  border-radius: 0;
     &.background {
         background-color: $panel_bg_color;
         color: $fg_color;
@@ -6,7 +7,7 @@
         text-shadow: none;
         -gtk-icon-shadow: none;
 
-        button.flat { @extend %panelbutton; }
+        button.flat:not(.open_group) { @extend %panelbutton; }
     }
     &#XfcePanelWindow, &#XfcePanelWindow.marching-ants {transition: none;}
 }
@@ -47,4 +48,12 @@
 
       label, image { color: inherit; }
     }
+}
+
+/* Vala-appmenu-plugin*/
+
+.-vala-panel-appmenu-core scrolledwindow,
+.-vala-panel-appmenu-private > menuitem,
+.-vala-panel-appmenu-private > menuitem:first-child > label {
+    color: $panel_fg_color;
 }

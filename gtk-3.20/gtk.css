@@ -2876,10 +2876,8 @@ list {
     border-color: rgba(26, 27, 35, 0.91); }
 
 row {
-  padding: 8px 14px;
-  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-  row label {
-    padding-left: 8px; }
+  background-color: transparent;
+  border-color: rgba(25, 26, 34, 0.9); }
   row:hover {
     transition: none; }
   row:backdrop {
@@ -3311,6 +3309,8 @@ popover.background {
     margin: 3px; }
   popover.background list separator {
     margin: 0px; }
+  popover.background list row {
+    padding: 8px; }
 
 /*****************
  * Progress bars *
@@ -3994,6 +3994,8 @@ stacksidebar row {
 
 placessidebar > viewport.frame {
   border-style: none; }
+placessidebar row label {
+  padding-left: 8px; }
 placessidebar row.sidebar-new-bookmark-row {
   color: rgba(189, 147, 249, 0.5); }
 placessidebar row:drop(active):not(:disabled) {
@@ -4458,7 +4460,8 @@ treeview.view header button, treeview.view header button:hover, treeview.view he
     border-style: none solid solid none;
     color: #55565c;
     background-image: none;
-    background-color: #2a2c39; }
+    background-color: #2a2c39;
+    box-shadow: none; }
     treeview.view header button:backdrop:disabled {
       border-color: #1e1f29;
       background-image: none; }
@@ -4673,7 +4676,7 @@ entry selection, row:selected, treeview.view:selected:focus, treeview.view:selec
   padding: 8px;
   border-radius: 2px 0 0 2px; }
   .budgie-menu .category-button:hover {
-    background-color: rgba(248, 248, 242, 0.05);
+    background-color: rgba(248, 248, 242, 0.15);
     color: #f8f8f2; }
   .budgie-menu .category-button:active {
     box-shadow: inset 0 2px 2px -2px rgba(0, 0, 0, 0.2); }
@@ -4856,7 +4859,7 @@ button.raven-trigger {
     color: #f8f8f2;
     font-weight: 700; }
   .budgie-panel.transparent {
-    background-color: rgba(8, 9, 12, 0.2); }
+    background-color: rgba(8, 9, 12, 0.4); }
     .top .budgie-panel.transparent {
       border-bottom-color: transparent; }
     .bottom .budgie-panel.transparent {
@@ -5057,60 +5060,8 @@ button.raven-trigger {
 .raven {
   padding: 0;
   color: #f8f8f2;
-  background-color: rgba(30, 31, 41, 0.92);
+  background-color: #1e1f29;
   transition: 170ms ease-out; }
-  .raven .raven-header {
-    min-height: 32px;
-    color: #f8f8f2;
-    border: solid rgba(25, 26, 34, 0.85);
-    border-width: 1px 0;
-    background-color: rgba(30, 31, 41, 0.2); }
-    .raven .raven-header * {
-      padding-top: 0;
-      padding-bottom: 0; }
-    .raven .raven-header.top {
-      border-top-style: none;
-      border-color: transparent;
-      margin-top: 3px;
-      min-height: 32px; }
-      .raven .raven-header.top button.image-button:hover {
-        color: rgba(174, 123, 248, 0.5);
-        box-shadow: none; }
-    .raven .raven-header > button.text-button {
-      border-radius: 2px;
-      color: #f8f8f2;
-      background-color: rgba(255, 60, 60, 0.9);
-      box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), inset 0px -1px 0px 0px rgba(0, 0, 0, 0.1); }
-      .raven .raven-header > button.text-button:hover {
-        border-radius: 2px;
-        color: #f8f8f2;
-        background-color: rgba(255, 85, 85, 0.9);
-        box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), inset 0px -1px 0px 0px rgba(0, 0, 0, 0.1); }
-      .raven .raven-header > button.text-button:active {
-        color: #f8f8f2;
-        background-color: rgba(255, 111, 111, 0.9);
-        box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), inset 0px -1px 0px 0px rgba(0, 0, 0, 0.1); }
-    .raven .raven-header.bottom {
-      border-bottom-style: none; }
-    .raven .raven-header button {
-      background-color: transparent;
-      color: #f8f8f2;
-      border-radius: 0;
-      border: none;
-      box-shadow: none;
-      margin-top: -4px;
-      margin-bottom: -4px;
-      min-height: 32px; }
-      .raven .raven-header button:hover {
-        border-radius: 0;
-        background-color: transparent;
-        color: rgba(189, 147, 249, 0.5); }
-      .raven .raven-header button:active, .raven .raven-header button:checked {
-        color: rgba(189, 147, 249, 0.5);
-        border-radius: 0;
-        background-color: transparent; }
-      .raven .raven-header button:disabled {
-        color: #8b8c8e; }
   .raven list {
     background-color: transparent; }
     .raven list:selected {
@@ -5166,13 +5117,13 @@ button.raven-trigger {
 calendar.raven-calendar {
   padding: 4px;
   color: #f8f8f2;
-  background-color: rgba(30, 31, 41, 0.2);
+  background-color: rgba(40, 42, 54, 0.6);
   border-color: transparent; }
   calendar.raven-calendar:indeterminate {
     color: alpha(currentColor,0.3); }
   calendar.raven-calendar:selected {
-    background: transparent;
-    color: rgba(189, 147, 249, 0.5);
+    background: rgba(189, 147, 249, 0.5);
+    color: #f8f8f2;
     font-weight: bold; }
   calendar.raven-calendar:backdrop {
     background-color: transparent; }
@@ -5358,10 +5309,10 @@ headerbar .budgie-run-dialog list row:selected .subtitle {
   min-height: 16px; }
   .budgie-menubar arrow.top {
     -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
-    border-bottom: 1px solid rgba(55, 56, 64, 0.928); }
+    border-bottom: 1px solid #34353d; }
   .budgie-menubar arrow.bottom {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-    border-top: 1px solid rgba(55, 56, 64, 0.928); }
+    border-top: 1px solid #34353d; }
 .budgie-menubar menuitem accelerator {
   color: rgba(248, 248, 242, 0.35); }
 .budgie-menubar menuitem check, .budgie-menubar menuitem radio {
@@ -5485,16 +5436,24 @@ headerbar .nautilus-window .path-buttons-box button:hover .subtitle, .nautilus-w
 .nautilus-window .path-buttons-box button:focus headerbar .subtitle,
 headerbar .nautilus-window .path-buttons-box button:focus .subtitle {
   color: #bd93f9; }
+.nautilus-window .path-buttons-box button > .horizontal > image {
+  padding: 0px 6px;
+  border-right: none; }
 .nautilus-window .path-buttons-box .current-dir label {
-  padding: 0px 12px;
+  padding: 0px 12px; }
+.nautilus-window .path-buttons-box .current-dir label, .nautilus-window .path-buttons-box .current-dir image {
   color: #bd93f9;
   background-color: rgba(189, 147, 249, 0.1);
   border-radius: 7px;
   box-shadow: none;
   text-shadow: none;
   font-weight: bold; }
-  .nautilus-window .path-buttons-box .current-dir label:backdrop {
-    color: rgba(189, 147, 249, 0.4); }
+.nautilus-window .path-buttons-box button.current-dir:only-child image {
+  margin-right: -6px;
+  padding: 0px 0px 0px 6px;
+  border-radius: 7px 0px 0px 7px; }
+.nautilus-window .path-buttons-box button.current-dir:only-child label {
+  border-radius: 0px 7px 7px 0px; }
 
 .nautilus-circular-button {
   border-radius: 20px;
@@ -5639,22 +5598,6 @@ headerbar .nautilus-window .path-buttons-box button:focus .subtitle {
 /*********
  * Panel *
  ********/
-.panel {
-  background-color: transparent;
-  transition: all 100ms ease-in-out;
-  color: #fff; }
-  .panel.maximized {
-    background-color: #000; }
-  .panel.translucent {
-    background-color: rgba(0, 0, 0, 0.5); }
-  .panel.color-light.translucent {
-    background-color: rgba(255, 255, 255, 0.85); }
-
-menubar.panel,
-.panel menubar {
-  box-shadow: none;
-  border: none; }
-
 .composited-indicator > revealer,
 .composited-indicator > revealer image,
 .composited-indicator > revealer label,
@@ -5824,13 +5767,15 @@ radiobutton.color-button:active > radio {
   background-repeat: no-repeat;
   background-size: calc(100% + 2px); }
 
-.xfce4-panel.background {
-  background-color: #1e1f29;
-  color: #f8f8f2;
-  text-shadow: none;
-  -gtk-icon-shadow: none; }
-.xfce4-panel#XfcePanelWindow, .xfce4-panel#XfcePanelWindow.marching-ants {
-  transition: none; }
+.xfce4-panel {
+  border-radius: 0; }
+  .xfce4-panel.background {
+    background-color: #1e1f29;
+    color: #f8f8f2;
+    text-shadow: none;
+    -gtk-icon-shadow: none; }
+  .xfce4-panel#XfcePanelWindow, .xfce4-panel#XfcePanelWindow.marching-ants {
+    transition: none; }
 
 #tasklist-button {
   color: rgba(255, 255, 255, 0.8);
@@ -5845,21 +5790,27 @@ radiobutton.color-button:active > radio {
     background-color: rgba(0, 0, 0, 0.25);
     box-shadow: inset 0 -2px rgba(189, 147, 249, 0.5); }
 
-.xfce4-panel.background button.flat {
+.xfce4-panel.background button.flat:not(.open_group) {
   color: white;
   border-radius: 0;
   border: none;
   background-color: #1e1f29;
   font-weight: normal; }
-  .xfce4-panel.background button.flat:hover {
+  .xfce4-panel.background button.flat:hover:not(.open_group) {
     border: none;
     background-color: #343546; }
-  .xfce4-panel.background button.flat:active, .xfce4-panel.background button.flat:checked {
+  .xfce4-panel.background button.flat:active:not(.open_group), .xfce4-panel.background button.flat:checked:not(.open_group) {
     color: white;
     border-bottom: 2px solid #bd93f9;
     background-color: #1a1b23; }
-    .xfce4-panel.background button.flat:active label, .xfce4-panel.background button.flat:active image, .xfce4-panel.background button.flat:checked label, .xfce4-panel.background button.flat:checked image {
+    .xfce4-panel.background button.flat:active:not(.open_group) label, .xfce4-panel.background button.flat:active:not(.open_group) image, .xfce4-panel.background button.flat:checked:not(.open_group) label, .xfce4-panel.background button.flat:checked:not(.open_group) image {
       color: inherit; }
+
+/* Vala-appmenu-plugin*/
+.-vala-panel-appmenu-core scrolledwindow,
+.-vala-panel-appmenu-private > menuitem,
+.-vala-panel-appmenu-private > menuitem:first-child > label {
+  color: white; }
 
 /********
 * Unity *
@@ -6018,6 +5969,17 @@ MsdOsdWindow.background.osd {
     background-color: rgba(9, 10, 12, 0.8);
     border: none;
     border-radius: 5px; }
+
+.mate-panel-menu-bar {
+  border-radius: 0; }
+  .mate-panel-menu-bar button {
+    border-radius: 0; }
+    .mate-panel-menu-bar button, .mate-panel-menu-bar button:hover {
+      background-color: transparent;
+      color: #f8f8f2; }
+    .mate-panel-menu-bar button:active, .mate-panel-menu-bar button:checked {
+      box-shadow: 0 -2px 0 rgba(189, 147, 249, 0.5) inset;
+      color: #f8f8f2; }
 
 /***********************
  * App-Specific Styles *
@@ -6277,7 +6239,7 @@ window.thunar toolbar > toolitem > widget > widget.linked.path-bar > button.path
 .caja-notebook .entry {
   background: #1e1f29;
   color: #f8f8f2;
-  border-color: rgba(25, 26, 34, 0.9); }
+  border-color: rgba(159, 99, 246, 0.5); }
   .caja-notebook .entry:selected {
     background: rgba(189, 147, 249, 0.5);
     color: #f8f8f2; }
@@ -6305,7 +6267,11 @@ window.thunar toolbar > toolitem > widget > widget.linked.path-bar > button.path
     .caja-side-pane viewport.frame:selected,
     .caja-side-pane widget .vertical:selected {
       color: #bd93f9;
-      background: #1e1f29; }
+      background-color: rgba(189, 147, 249, 0.1);
+      border-radius: 7px;
+      box-shadow: none;
+      text-shadow: none;
+      font-weight: bold; }
       .caja-side-pane treeview.view:selected:hover,
       .caja-side-pane textview.view text:selected:hover,
       .caja-side-pane viewport.frame:selected:hover,
